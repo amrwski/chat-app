@@ -1,0 +1,13 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  background-image: url("src/assets/body_bg.png");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
