@@ -1,13 +1,22 @@
-import { KeyboardEvent, SyntheticEvent, useState } from "react";
+import { useEffect, useRef, useState, KeyboardEvent, SyntheticEvent } from "react";
+import { postMessage } from "../../services/postMessageService";
 import "./InputBar.css";
+import { author } from "../../services/config";
 
 export const InputBar = () => {
   const [message, setMessage] = useState("");
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
 
   const sendMessage = (e: SyntheticEvent) => {
     e.preventDefault();
     if (message) {
-      console.log(message);
+      postMessage(message, author);
     }
     setMessage("");
   };
@@ -28,6 +37,7 @@ export const InputBar = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyPress}
+          ref={inputRef}
         />
         <button className="send-button" onClick={sendMessage}>
           Send
