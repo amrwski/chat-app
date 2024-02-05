@@ -1,6 +1,7 @@
+import { Message } from "../types";
 import { url, token } from "./config";
 
-export const postMessage = async (message: string, author: string): Promise<void> => {
+export const postMessage = async (message: string, author: string): Promise<Message> => {
   try {
     const response = await fetch(url, {
       method: "POST",
