@@ -1,12 +1,17 @@
+.message-list {
+  padding-bottom: 76px;
+  overflow-y: auto;
+}
+
 .message-input-container {
   display: flex;
   justify-content: center;
+  height: 60px;
   width: 100vw;
   background-color: #3898d3;
   padding: 8px 0;
   position: fixed;
   bottom: 0;
-  z-index: 100;
 }
 
 .input-btn-wrapper {
