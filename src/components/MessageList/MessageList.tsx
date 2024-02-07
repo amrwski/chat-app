@@ -70,6 +70,7 @@ export const MessageList = () => {
             content={message}
             timestamp={timestamp}
             isMine={author === USERNAME}
+            aria-label="Message bubble"
           />
         ))}
       </div>

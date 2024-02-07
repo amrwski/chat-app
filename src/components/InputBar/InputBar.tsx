@@ -38,8 +38,9 @@ export const InputBar = () => {
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyPress}
           ref={inputRef}
+          aria-label="Input message"
         />
-        <button className="send-button" onClick={sendMessage}>
+        <button className="send-button" onClick={sendMessage} aria-label="Send message">
           Send
         </button>
       </div>

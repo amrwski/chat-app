@@ -6,6 +6,8 @@
 
 .message-list {
   max-width: 640px;
+  padding-bottom: 76px;
+  overflow-y: auto;
 }
 
 .spinner-container {
@@ -13,4 +15,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bubble-container {
+  list-style-type: none;
+}
+
+@media (max-width: 600px) {
+  .message-list {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
