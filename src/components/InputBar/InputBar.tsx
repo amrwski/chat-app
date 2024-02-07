@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, KeyboardEvent, SyntheticEvent } from "react";
-import { postMessage } from "../../services/postMessageService";
+import { postMessage } from "../../services";
 import "./InputBar.css";
 import { USERNAME } from "../../services/config";
 

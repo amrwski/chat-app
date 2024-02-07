@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import { MessageBubble } from "../MessageBubble/MessageBubble";
-import { fetchMessages } from "../../services/fetchMessagesService";
+import { MessageBubble } from "../MessageBubble";
 import { USERNAME, POLLING_FREQ } from "../../services/config";
+import { fetchMessages } from "../../services";
 import { MessageType } from "../../types";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./MessageList.css";

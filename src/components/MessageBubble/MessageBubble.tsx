@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { dateFormatter } from "../../utils/dateFormatter";
+import { dateFormatter } from "../../utils";
 import "./MessageBubble.css";
 
 interface IMessageBubble {

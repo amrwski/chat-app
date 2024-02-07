@@ -1,5 +1,4 @@
-import { InputBar } from "./components/InputBar/InputBar";
-import { MessageList } from "./components/MessageList/MessageList";
+import { InputBar, MessageList } from "./components";
 
 function App() {
   return (
