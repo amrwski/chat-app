@@ -9,7 +9,8 @@ import "./MessageList.css";
 export const MessageList = () => {
   const [messages, setMessages] = useState<MessageType[]>([]);
   const [isLoadingInitial, setIsLoadingInitial] = useState(true);
-  const lastFetchedTime = useRef<string>();
+  const lastFetchedTime = useRef<string>("");
+  const endOfListRef = useRef<HTMLDivElement | null>(null);
 
   const fetchAndSetMessages = useCallback(async () => {
     try {
@@ -44,6 +45,12 @@ export const MessageList = () => {
     return () => clearInterval(intervalId);
   }, [fetchAndSetMessages]);
 
+  useEffect(() => {
+    if (endOfListRef.current) {
+      endOfListRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages]);
+
   if (isLoadingInitial) {
     return (
       <div className="spinner-container">
@@ -57,6 +64,7 @@ export const MessageList = () => {
       <div className="message-list">
         {messages.map(({ _id, author, message, timestamp }) => (
           <MessageBubble
+            ref={endOfListRef}
             key={_id}
             author={author}
             content={message}

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { forwardRef } from "react";
 import { dateFormatter } from "../../utils/dateFormatter";
 import "./MessageBubble.css";
 
@@ -9,10 +9,12 @@ interface IMessageBubble {
   isMine: boolean;
 }
 
-export const MessageBubble: FC<IMessageBubble> = ({ author, content, timestamp, isMine }) => (
-  <div className={`message ${isMine ? "mine" : ""}`}>
-    <div className="message-author">{author}</div>
-    <div className="message-content">{content}</div>
-    <div className="message-timestamp">{dateFormatter(timestamp)}</div>
-  </div>
+export const MessageBubble = forwardRef<HTMLDivElement, IMessageBubble>(
+  ({ author, content, timestamp, isMine }, ref) => (
+    <div ref={ref} className={`message ${isMine ? "mine" : ""}`}>
+      <div className="message-author">{author}</div>
+      <div className="message-content">{content}</div>
+      <div className="message-timestamp">{dateFormatter(timestamp)}</div>
+    </div>
+  )
 );
