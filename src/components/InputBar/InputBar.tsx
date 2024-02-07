@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, KeyboardEvent, SyntheticEvent } from "react";
 import { postMessage } from "../../services/postMessageService";
 import "./InputBar.css";
-import { username } from "../../services/config";
+import { USERNAME } from "../../services/config";
 
 export const InputBar = () => {
   const [message, setMessage] = useState("");
@@ -16,7 +16,7 @@ export const InputBar = () => {
   const sendMessage = (e: SyntheticEvent) => {
     e.preventDefault();
     if (message) {
-      postMessage(message, username);
+      postMessage(message, USERNAME);
     }
     setMessage("");
   };
