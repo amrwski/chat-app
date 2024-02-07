@@ -26,7 +26,13 @@
   border-radius: 4px;
   font-size: 16px;
   outline: none;
+  caret-color: #3175a0;
   border: 2px solid #3175a0;
+}
+
+.message-input-field::placeholder {
+  color: #b2b2b4;
+  padding-left: 4px;
 }
 
 .send-button {

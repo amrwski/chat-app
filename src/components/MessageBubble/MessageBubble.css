@@ -11,12 +11,21 @@
 }
 
 .message-author {
+  color: #b2b2b4;
   margin-bottom: 5px;
+}
+
+.message.mine .message-author {
+  display: none;
+}
+
+.message-content {
+  color: #606569;
 }
 
 .message-timestamp {
   font-size: 0.75rem;
-  color: #555;
+  color: #b2b2b4;
   margin-top: 5px;
 }
 
