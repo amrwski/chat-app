@@ -2,12 +2,12 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { MessageBubble } from "../MessageBubble/MessageBubble";
 import { fetchMessages } from "../../services/fetchMessagesService";
 import { USERNAME, POLLING_FREQ } from "../../services/config";
-import { Message } from "../../types";
+import { MessageType } from "../../types";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./MessageList.css";
 
 export const MessageList = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<MessageType[]>([]);
   const [isLoadingInitial, setIsLoadingInitial] = useState(true);
   const lastFetchedTime = useRef<string>();
 
@@ -47,7 +47,7 @@ export const MessageList = () => {
   if (isLoadingInitial) {
     return (
       <div className="spinner-container">
-        <ClipLoader loading={isLoadingInitial} size={50} />
+        <ClipLoader loading={isLoadingInitial} color="#3898d3" size={50} />
       </div>
     );
   }

@@ -7,3 +7,10 @@
 .message-list {
   max-width: 640px;
 }
+
+.spinner-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

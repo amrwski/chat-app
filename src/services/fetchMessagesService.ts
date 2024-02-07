@@ -1,7 +1,7 @@
-import { Message } from "../types";
+import { MessageType } from "../types";
 import { token, url } from "./config";
 
-export const fetchMessages = async (since?: string): Promise<Message[]> => {
+export const fetchMessages = async (since?: string): Promise<MessageType[]> => {
   try {
     const params = new URLSearchParams({
       ...(since ? { since, limit: "10" } : {}),
