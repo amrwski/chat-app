@@ -1,5 +1,5 @@
 export const dateFormatter = (timestamp: string) => {
-  const date = new Date(timestamp);
+  const date = new Date(Number(timestamp));
   const formatter = new Intl.DateTimeFormat("en-GB", {
     day: "numeric",
     month: "short",
